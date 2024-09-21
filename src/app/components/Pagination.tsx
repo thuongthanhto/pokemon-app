@@ -20,7 +20,7 @@ export const Pagination = ({ page, totalPages }: PaginationProps) => {
   }
 
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center mt-16">
       <button
         className="mx-2 px-4 py-2 bg-blue-500 text-white rounded w-[150px] disabled:opacity-50"
         onClick={() => handleNavigation('prev')}
