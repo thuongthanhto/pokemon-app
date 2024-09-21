@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 type TypeSelectorProps = {
   initialTypes?: string[]
-  typesDataSource: any
+  typesDataSource: NamedAPIResource[]
 }
 
 const TypeSelector: React.FC<TypeSelectorProps> = ({
@@ -42,14 +42,12 @@ const TypeSelector: React.FC<TypeSelectorProps> = ({
     })
   }
 
-
-
   return (
     <div className="my-16">
       <div className="flex items-center mx-4 my-4">
         <div className="mr-2 my-4 font-bold self-start">Types:</div>
         <div>
-          {typesDataSource.map((type) => (
+          {typesDataSource.map((type: NamedAPIResource) => (
             <button
               key={type.name}
               className={`px-2 py-2 mx-2 my-2 border-green-500 border-2 rounded-md font-bold  ${

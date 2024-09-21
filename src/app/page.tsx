@@ -35,7 +35,7 @@ const Home = async ({ searchParams: { page, types } }: SearchParamProps) => {
   try {
     const typesData = await getTypes()
     const typesDataSource = typesData.results
-    const initialTypes = types ? types.split(',') : []
+    const initialTypes = types ? (types as string).split(',') : []
 
     if (types) {
       const selectedTypes = typesDataSource.filter((item) =>
